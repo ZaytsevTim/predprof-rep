@@ -1,16 +1,33 @@
-# This is a sample Python script.
+class Studentiki:
+    id=0
+    fio=''
+    id_project=0
+    clas=''
+    score=0
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+students=[]
+f=open('students.csv')
+j=0
+
+for i in f:
+    s=i.split(',')
+    if (s[3][:-1])== '10':
+        b=Studentiki()
+        b.fio=s[1]
+        b.score==int(s[4])
+        students.append(b)
+for i in range(len(students)):
+    j=i
+    print(students[j].fio)
+    t=students[i]
+    while j>0 and students[j-1].score<t.score:
+        students[j]=students[j-1]
+        j-=1
+    students[j]=t
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+8 to toggle the breakpoint.
+print(len(students))
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharmfddfd')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(students[0].fio)
+print(students[1].fio)
+print(students[2].fio)
